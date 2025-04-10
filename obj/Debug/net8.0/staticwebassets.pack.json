@@ -9,12 +9,48 @@
       "PackagePath": "staticwebassets\\css\\site.css"
     },
     {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.css",
+      "PackagePath": "staticwebassets\\css\\uikit-rtl.css"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.min.css",
+      "PackagePath": "staticwebassets\\css\\uikit-rtl.min.css"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.css",
+      "PackagePath": "staticwebassets\\css\\uikit.css"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.min.css",
+      "PackagePath": "staticwebassets\\css\\uikit.min.css"
+    },
+    {
       "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\formatarData.js",
+      "PackagePath": "staticwebassets\\js\\formatarData.js"
+    },
+    {
       "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.js",
+      "PackagePath": "staticwebassets\\js\\uikit-icons.js"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.min.js",
+      "PackagePath": "staticwebassets\\js\\uikit-icons.min.js"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.js",
+      "PackagePath": "staticwebassets\\js\\uikit.js"
+    },
+    {
+      "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.min.js",
+      "PackagePath": "staticwebassets\\js\\uikit.min.js"
     },
     {
       "Id": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\lib\\bootstrap\\LICENSE",

@@ -1,22 +1,83 @@
-html {
-  font-size: 14px;
-}
-
-@media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
-}
-
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
-}
-
-html {
-  position: relative;
-  min-height: 100%;
-}
-
+html,
 body {
-  margin-bottom: 60px;
+  height: 100%;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+.container {
+  flex: 1; /* Faz o conteúdo principal ocupar o espaço disponível */
+}
+
+.container-principal {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.container-tarefa {
+  height: 74px;
+  width: 770px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+
+.input-pesquisar,
+.container-filtros,
+.container-resultados {
+  width: 770px;
+}
+
+.container-button-filtros {
+  background-color: #f1f5f9;
+  height: 40px;
+}
+
+.button-container-selected {
+  width: 180px;
+  height: 32px;
+  background-color: #fff;
+  border: none;
+  cursor: pointer;
+}
+
+.button-container-deselected {
+  width: 180px;
+  height: 32px;
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  color: #64748b;
+}
+
+.button-container-deselected:hover {
+  background-color: #fff;
+}
+
+.container-resultado {
+  height: 74px;
+  border: 1px solid #e2e8f0;
+}
+
+.badge-urgente {
+  width: 86px;
+  height: 28px;
+  background-color: #ef4444;
+  color: #fff;
+  font-size: 12px;
+  border-radius: 12px;
+}
+
+.badge-atrasada {
+  width: 86px;
+  height: 28px;
+  font-size: 12px;
+  border: 1px solid #ef4444;
+  border-radius: 12px;
+  color: #ef4444;
 }

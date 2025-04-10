@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "bcdW/1jPu6KBf5Ku9/iJlG9LmN98VRNkNSHGzzuGYH0=",
+  "Hash": "YNOrDw+vNSM5F5lRA0qeSTkBr7cOP9PsgcAepJ9EyIM=",
   "Source": "GerenciadorTarefas",
   "BasePath": "_content/GerenciadorTarefas",
   "Mode": "Default",
@@ -73,11 +73,95 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "c2tiyv64ts",
-      "Integrity": "pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=",
+      "Fingerprint": "xd49ngri5v",
+      "Integrity": "dWUmeGB0RJ0Yj3I+a5WBKdt7F9JM97XMYFfMEb3trnc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.css",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "css/uikit-rtl#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mjay16ylt2",
+      "Integrity": "4kKSR5WixR0v7VQvooW31woTuUD8R2r3AUcH3lnXtsY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\uikit-rtl.css"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.min.css",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "css/uikit-rtl.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ie9gj3w3es",
+      "Integrity": "mjJ9k314AWx5tC+lcqO79CPpKfN96I9OzRg3ekW1an8=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\uikit-rtl.min.css"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.css",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "css/uikit#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "eafz3l7z5m",
+      "Integrity": "2kCB8d24E8W+QwesfH31eL64y+kVAEgNsNZ9OVyT7Ho=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\uikit.css"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.min.css",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "css/uikit.min#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "vxbgenz6de",
+      "Integrity": "c9qAkq2Tnm96osqY0vQ1nfe2EclOcjSeuzxKq3I1F9A=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\uikit.min.css"
     },
     {
       "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\favicon.ico",
@@ -101,6 +185,27 @@
       "OriginalItemSpec": "wwwroot\\favicon.ico"
     },
     {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\formatarData.js",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "js/formatarData#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "sm7w7b6ns2",
+      "Integrity": "XH76RDuro4O8rEz2kvz+xXbBjKYg4z3Mj1LaYLDocx0=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\formatarData.js"
+    },
+    {
       "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\site.js",
       "SourceId": "GerenciadorTarefas",
       "SourceType": "Discovered",
@@ -120,6 +225,90 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.js",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "js/uikit-icons#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "crxfj4ztfx",
+      "Integrity": "WLTzcqj4eYva36sePxzFZOlJX69yn2N0GvWoE9zqDuE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\uikit-icons.js"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.min.js",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "js/uikit-icons.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "ny09yg3plx",
+      "Integrity": "4YCt8Np/JnPElg5pA1/d197TSHmoI5K+wjqMjRvZndE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\uikit-icons.min.js"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.js",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "js/uikit#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "efxn21r7hs",
+      "Integrity": "+l7aEFb6xVBuDk6lUj0slEDJkM4bNYPhkweC6Ye5BNE=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\uikit.js"
+    },
+    {
+      "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.min.js",
+      "SourceId": "GerenciadorTarefas",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\",
+      "BasePath": "_content/GerenciadorTarefas",
+      "RelativePath": "js/uikit.min#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "pzb659aai6",
+      "Integrity": "NYszbTSDEPcKwqXSePjRZMxjEsuoG1whl2/tj2jiFKc=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\uikit.min.js"
     },
     {
       "Identity": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-grid.css",
@@ -1321,51 +1510,6 @@
   ],
   "Endpoints": [
     {
-      "Route": "css/site.c2tiyv64ts.css",
-      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\site.css",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "362"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 16:04:01 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "c2tiyv64ts"
-        },
-        {
-          "Name": "label",
-          "Value": "css/site.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
-        }
-      ]
-    },
-    {
       "Route": "css/site.css",
       "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\site.css",
       "Selectors": [],
@@ -1376,7 +1520,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "362"
+          "Value": "1200"
         },
         {
           "Name": "Content-Type",
@@ -1384,11 +1528,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0=\""
+          "Value": "\"dWUmeGB0RJ0Yj3I+a5WBKdt7F9JM97XMYFfMEb3trnc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Wed, 09 Apr 2025 16:04:01 GMT"
+          "Value": "Thu, 10 Apr 2025 17:53:16 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -1398,7 +1542,380 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-pAGv4ietcJNk/EwsQZ5BN9+K4MuNYS2a9wl4Jw+q9D0="
+          "Value": "sha256-dWUmeGB0RJ0Yj3I+a5WBKdt7F9JM97XMYFfMEb3trnc="
+        }
+      ]
+    },
+    {
+      "Route": "css/site.xd49ngri5v.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\site.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1200"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dWUmeGB0RJ0Yj3I+a5WBKdt7F9JM97XMYFfMEb3trnc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 17:53:16 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "xd49ngri5v"
+        },
+        {
+          "Name": "label",
+          "Value": "css/site.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dWUmeGB0RJ0Yj3I+a5WBKdt7F9JM97XMYFfMEb3trnc="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit-rtl.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "394834"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4kKSR5WixR0v7VQvooW31woTuUD8R2r3AUcH3lnXtsY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4kKSR5WixR0v7VQvooW31woTuUD8R2r3AUcH3lnXtsY="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit-rtl.min.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "279668"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mjJ9k314AWx5tC+lcqO79CPpKfN96I9OzRg3ekW1an8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-mjJ9k314AWx5tC+lcqO79CPpKfN96I9OzRg3ekW1an8="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit-rtl.min.ie9gj3w3es.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "279668"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"mjJ9k314AWx5tC+lcqO79CPpKfN96I9OzRg3ekW1an8=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ie9gj3w3es"
+        },
+        {
+          "Name": "label",
+          "Value": "css/uikit-rtl.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-mjJ9k314AWx5tC+lcqO79CPpKfN96I9OzRg3ekW1an8="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit-rtl.mjay16ylt2.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit-rtl.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "394834"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4kKSR5WixR0v7VQvooW31woTuUD8R2r3AUcH3lnXtsY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mjay16ylt2"
+        },
+        {
+          "Name": "label",
+          "Value": "css/uikit-rtl.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4kKSR5WixR0v7VQvooW31woTuUD8R2r3AUcH3lnXtsY="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "394715"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2kCB8d24E8W+QwesfH31eL64y+kVAEgNsNZ9OVyT7Ho=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-2kCB8d24E8W+QwesfH31eL64y+kVAEgNsNZ9OVyT7Ho="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit.eafz3l7z5m.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "394715"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"2kCB8d24E8W+QwesfH31eL64y+kVAEgNsNZ9OVyT7Ho=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "eafz3l7z5m"
+        },
+        {
+          "Name": "label",
+          "Value": "css/uikit.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-2kCB8d24E8W+QwesfH31eL64y+kVAEgNsNZ9OVyT7Ho="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit.min.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "279554"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c9qAkq2Tnm96osqY0vQ1nfe2EclOcjSeuzxKq3I1F9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c9qAkq2Tnm96osqY0vQ1nfe2EclOcjSeuzxKq3I1F9A="
+        }
+      ]
+    },
+    {
+      "Route": "css/uikit.min.vxbgenz6de.css",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\css\\uikit.min.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "279554"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c9qAkq2Tnm96osqY0vQ1nfe2EclOcjSeuzxKq3I1F9A=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "vxbgenz6de"
+        },
+        {
+          "Name": "label",
+          "Value": "css/uikit.min.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c9qAkq2Tnm96osqY0vQ1nfe2EclOcjSeuzxKq3I1F9A="
         }
       ]
     },
@@ -1649,6 +2166,88 @@
       ]
     },
     {
+      "Route": "js/formatarData.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\formatarData.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "609"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XH76RDuro4O8rEz2kvz+xXbBjKYg4z3Mj1LaYLDocx0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 16:53:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-XH76RDuro4O8rEz2kvz+xXbBjKYg4z3Mj1LaYLDocx0="
+        }
+      ]
+    },
+    {
+      "Route": "js/formatarData.sm7w7b6ns2.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\formatarData.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "609"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"XH76RDuro4O8rEz2kvz+xXbBjKYg4z3Mj1LaYLDocx0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Thu, 10 Apr 2025 16:53:44 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "sm7w7b6ns2"
+        },
+        {
+          "Name": "label",
+          "Value": "js/formatarData.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-XH76RDuro4O8rEz2kvz+xXbBjKYg4z3Mj1LaYLDocx0="
+        }
+      ]
+    },
+    {
       "Route": "js/site.js",
       "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\site.js",
       "Selectors": [],
@@ -1727,6 +2326,334 @@
         {
           "Name": "integrity",
           "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit-icons.crxfj4ztfx.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72205"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WLTzcqj4eYva36sePxzFZOlJX69yn2N0GvWoE9zqDuE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "crxfj4ztfx"
+        },
+        {
+          "Name": "label",
+          "Value": "js/uikit-icons.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-WLTzcqj4eYva36sePxzFZOlJX69yn2N0GvWoE9zqDuE="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit-icons.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "72205"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"WLTzcqj4eYva36sePxzFZOlJX69yn2N0GvWoE9zqDuE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-WLTzcqj4eYva36sePxzFZOlJX69yn2N0GvWoE9zqDuE="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit-icons.min.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70080"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4YCt8Np/JnPElg5pA1/d197TSHmoI5K+wjqMjRvZndE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-4YCt8Np/JnPElg5pA1/d197TSHmoI5K+wjqMjRvZndE="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit-icons.min.ny09yg3plx.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit-icons.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "70080"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"4YCt8Np/JnPElg5pA1/d197TSHmoI5K+wjqMjRvZndE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:13 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ny09yg3plx"
+        },
+        {
+          "Name": "label",
+          "Value": "js/uikit-icons.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-4YCt8Np/JnPElg5pA1/d197TSHmoI5K+wjqMjRvZndE="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit.efxn21r7hs.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "331331"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+l7aEFb6xVBuDk6lUj0slEDJkM4bNYPhkweC6Ye5BNE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "efxn21r7hs"
+        },
+        {
+          "Name": "label",
+          "Value": "js/uikit.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-+l7aEFb6xVBuDk6lUj0slEDJkM4bNYPhkweC6Ye5BNE="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "331331"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"+l7aEFb6xVBuDk6lUj0slEDJkM4bNYPhkweC6Ye5BNE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-+l7aEFb6xVBuDk6lUj0slEDJkM4bNYPhkweC6Ye5BNE="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit.min.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "149939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NYszbTSDEPcKwqXSePjRZMxjEsuoG1whl2/tj2jiFKc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NYszbTSDEPcKwqXSePjRZMxjEsuoG1whl2/tj2jiFKc="
+        }
+      ]
+    },
+    {
+      "Route": "js/uikit.min.pzb659aai6.js",
+      "AssetFile": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\wwwroot\\js\\uikit.min.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "149939"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NYszbTSDEPcKwqXSePjRZMxjEsuoG1whl2/tj2jiFKc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 09 Apr 2025 19:16:12 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "pzb659aai6"
+        },
+        {
+          "Name": "label",
+          "Value": "js/uikit.min.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NYszbTSDEPcKwqXSePjRZMxjEsuoG1whl2/tj2jiFKc="
         }
       ]
     },

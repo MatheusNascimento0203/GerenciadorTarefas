@@ -1,20 +1,219 @@
-﻿@{
+﻿@using GerenciadorTarefas.ViewModels
+@model IEnumerable<TarefaViewModel>
+
+@{
     ViewData["Title"] = "Home - Gerenciador Tarefas";
 }
 
-<div>
-    <div class="uk-flex uk-flex-center" >
-    <div  class="uk-flex uk-flex-middle uk-flex-between" >
+<div class="container-principal">
+    <div class="container-tarefa uk-flex uk-flex-middle uk-flex-center uk-margin-medium-top">
         <div>
-            <h3>Gerenciador de Tarefas </h3> 
+            <h2>Gerenciador de Tarefas</h2>
             <p>Organize suas Tarefas forma eficiente</p>
         </div>
         <div>
-            <Button>+ Nova Tarefa</Button>
+            <button class="uk-button uk-button-primary uk-border-rounded" uk-toggle="target: #modal-cadastrar-tarefa">+ NOVA TAREFA</button>            
+        </div>
+        <div id="modal-cadastrar-tarefa" uk-modal>
+            <div class="uk-modal-dialog uk-modal-body uk-border-rounded">
+                <button class="uk-modal-close-default" type="button" uk-close></button>
+                <h2 class="uk-modal-title">Adicionar Tarefa</h2>
+                <form>
+                    <div class="uk-margin uk-border-rounded">
+                        <label for="descricaoTarefa" class="uk-text-bold">Nome da Tarefa</label>
+                        <input id="descricaoTarefa" class="uk-input" type="text" placeholder="Adicione o nome da tarefa..." aria-label="Input">
+                    </div>
+                    <div class="uk-margin uk-border-rounded">
+                        <label for="dataVencimento" class="uk-text-bold">Data de Vencimento</label>
+                        <input id="dataVencimento" class="uk-input" type="date" aria-label="Input">                        
+                    </div>
+                    <div class="uk-flex uk-flex-middle">
+                        <input id="tarefaUrgente" class="uk-checkbox uk-border-rounded uk-margin-xsmall-top uk-margin-small-right" type="checkbox">
+                        <p class="uk-margin-remove-bottom uk-margin-remove-top uk-text-bold">Tarefa Urgente</p>
+                    </div>
+                    <p class="uk-text-right">
+                        <button class="uk-button uk-button-default uk-modal-close uk-border-rounded uk-text-bold" type="button">Cancelar</button>
+                        <button class="uk-button uk-button-primary uk-border-rounded" type="submit">Salvar</button>
+                    </p>
+                </form>
+            </div>
+        </div>        
+    </div>
+    <form class="uk-inline">
+        <span class="uk-form-icon" uk-icon="icon: search"></span>
+        <input class="input-pesquisar uk-input uk-border-rounded" placeholder="Pesquisar Tarefas...">
+    </form>
+    <div class="container-filtros">
+        <p class="uk-margin-small-top uk-margin-remove-bottom uk-text-bold">Filtros</p>
+        <div class="container-button-filtros uk-flex uk-flex-center uk-flex-middle uk-flex-between uk-background-primary uk-border-rounded" >
+            <button class="button-container-selected uk-border-rounded uk-margin-small-left">Todas</button>
+            <button class="button-container-deselected uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;">
+                <span uk-icon="icon: clock"></span> 
+                Pendentes
+            </button>
+            <button class="button-container-deselected uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;"">
+                <span uk-icon="icon: check"></span> 
+                Concluídas
+            </button>
+            <button class="button-container-deselected uk-margin-small-right uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;"">
+                <span uk-icon="icon: warning"></span> 
+                Urgentes
+            </button>
         </div>
     </div>
-    <div>
-        <input type="text" placeholder="Pesquisar Tarefas">
-    </div>
+
+     <div class="container-resultados">
+        @if (Model != null && Model.Any())
+        {
+            @foreach (var tarefa in Model)
+            {
+                <div id= "tarefa-@tarefa.Id" class="container-resultado uk-margin-small-top uk-border-rounded">
+                    <div class="uk-flex uk-flex-center uk-flex-middle uk-flex-between uk-margin-small-top">
+                        <div class="uk-flex uk-flex-middle uk-margin-small-left">
+                            <input class="uk-checkbox uk-border-rounded uk-margin-small-right" type="checkbox">
+                            <div>
+                                <p class="uk-margin-remove-bottom uk-text-bold">@tarefa.Descricao</p>
+                                <p class="uk-margin-remove-top uk-margin-remove-bottom">
+                                    <span uk-icon="icon: calendar"></span>
+                                    @tarefa.DataVencimento.ToString("dd 'de' MMMM 'de' yyyy")
+                                </p>
+                            </div>
+                        </div>
+                        <div class="uk-margin-small-right uk-flex uk-flex-middle uk-flex-center uk-flex-between" style="gap: 8px;">
+                            @if (@tarefa.Urgente) 
+                            {     
+                                <div class="uk-flex uk-flex-middle uk-flex-center uk-border-rounded badge-urgente" style="gap: 4px;">
+                                    <span uk-icon="icon: warning; ratio: 1"></span>
+                                    <p>Urgente</p>
+                                </div>
+                            }
+                            @if (@tarefa.DataVencimento < DateTime.Now)
+                            {
+                                <div class="uk-text-center uk-border-rounded badge-atrasada">
+                                    <p class="uk-text-bold uk-margin-xsmall-top">Vencida</p>
+                                </div>
+
+                            }
+                            <button>
+                                <span uk-icon="icon: pencil"></span>
+                            </button>
+                            <button onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
+                                <span uk-icon="icon: trash"></span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            }
+        }
     </div>
 </div>
+
+<script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+
+<script>
+
+    $('form').on('submit', function (e) {
+        e.preventDefault();
+        cadastrarTarefa();
+    });
+    
+    function cadastrarTarefa() {
+
+        var descricao = $('#descricaoTarefa').val();
+        var dataVencimento = $('#dataVencimento').val();
+        var dataVencimentoObj = new Date(dataVencimento);
+        var dataAtual = new Date();
+        dataAtual.setHours(0,0,0,0);
+        var dataAtualFormatada = dataAtual.toISOString().split('T')[0]; 
+        var dataVencimentoFormatada = dataVencimentoObj.toISOString().split('T')[0];
+        var urgente = $('#tarefaUrgente').is(':checked');
+
+        //VALIDANDO CAMPO DESCRIÇÃO
+        if (descricao.trim() === '') {
+        UIkit.notification({
+            message: 'Nome da Tarefa é obrigatório.',
+            status: 'danger',
+            pos: 'bottom-center',            
+            timeout: 1500,
+        });
+            return;
+        } 
+
+        //VALIDANDO CAMPO DATA VENCIMENTO
+        if (dataVencimento.trim() === '') {
+        UIkit.notification({
+            message: 'Data de vencimento é obrigatória.',
+            status: 'danger',
+            pos: 'bottom-center',            
+            timeout: 1500,
+        });
+            return;
+        } 
+
+        if (dataVencimentoFormatada < dataAtualFormatada) {
+             UIkit.notification({
+            message: 'Data de vencimento deve ser maior que a data atual.',
+            status: 'danger',
+            pos: 'bottom-center',            
+            timeout: 1500,
+        });
+            return;
+        }
+
+        var tarefa = { 
+            Descricao: descricao,
+            DataVencimento: dataVencimento,
+            Urgente: urgente,
+            Concluida: false
+        }
+
+        $.ajax({
+            url: '@Url.Action("CriarTarefa", "Home")',
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(tarefa),
+            success: function() {
+                UIkit.notification({
+                    message: 'Tarefa adicionada com sucesso!',
+                    status: 'success',
+                    pos: 'top-center',
+                    timeout: 1500
+                });
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            },
+            error: function () {
+                UIkit.notification({
+                    message: 'Erro ao adicionar tarefa!',
+                    status: 'danger',
+                    pos: 'top-center',
+                    timeout: 1500
+                });
+            }
+        });
+    }
+
+    function removerTarefa(url, tarefaId) {
+        console.log(tarefaId);
+         $.post(url)
+            .done(function () {
+                $(`#tarefa-${tarefaId}`).remove();
+                UIkit.notification({
+                    message: 'Tarefa removida com sucesso!',
+                    status: 'success',
+                    pos: 'top-center',
+                    timeout: 1500
+                });
+            })
+            .fail(function () {
+                UIkit.notification({
+                    message: 'Erro ao remover tarefa!',
+                    status: 'danger',
+                    pos: 'top-center',
+                    timeout: 1500
+                });
+            });
+    }
+
+</script>

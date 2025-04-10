@@ -24,9 +24,17 @@ namespace GerenciadorTarefas.Repository
             await _context.SaveChangesAsync();
         }
 
-        public async Task <List<Tarefa>> ListarTarefas()
+        public async Task <IEnumerable<Tarefa>> ListarTarefas()
         {
             return await _context.Tarefas.ToListAsync();
+        }
+
+        public async Task<Tarefa> ExcluirTarefa(int idTarefa)
+        {
+            var tarefa = await _context.Tarefas.FindAsync(idTarefa);
+            _context.Tarefas.Remove(tarefa);
+            await _context.SaveChangesAsync();
+            return tarefa;
         }
 
     }
