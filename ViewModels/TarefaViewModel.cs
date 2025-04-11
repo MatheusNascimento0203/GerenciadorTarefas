@@ -17,6 +17,7 @@ public class TarefaViewModel
         Descricao = tarefa.Descricao;
         DataVencimento = tarefa.DataVencimento;
         Urgente = tarefa.Urgente;
+        Concluida = tarefa.Concluida;
     }
 
     private string ConverterDataVencimentoParaString(DateTime dataVencimento)

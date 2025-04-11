@@ -12,12 +12,12 @@
             <p>Organize suas Tarefas forma eficiente</p>
         </div>
         <div>
-            <button class="uk-button uk-button-primary uk-border-rounded" uk-toggle="target: #modal-cadastrar-tarefa">+ NOVA TAREFA</button>            
+            <button class="uk-button uk-button-primary uk-border-rounded" uk-toggle="target: #modal-tarefa">+ NOVA TAREFA</button>            
         </div>
-        <div id="modal-cadastrar-tarefa" uk-modal>
+        <div id="modal-tarefa" uk-modal>
             <div class="uk-modal-dialog uk-modal-body uk-border-rounded">
                 <button class="uk-modal-close-default" type="button" uk-close></button>
-                <h2 class="uk-modal-title">Adicionar Tarefa</h2>
+                <h2 id="titulo-modal" class="uk-modal-title">Adicionar Tarefa</h2>
                 <form>
                     <div class="uk-margin uk-border-rounded">
                         <label for="descricaoTarefa" class="uk-text-bold">Nome da Tarefa</label>
@@ -39,40 +39,44 @@
             </div>
         </div>        
     </div>
-    <form class="uk-inline">
+    <form class="container-pesquisar uk-inline">
         <span class="uk-form-icon" uk-icon="icon: search"></span>
-        <input class="input-pesquisar uk-input uk-border-rounded" placeholder="Pesquisar Tarefas...">
+        <input class="input-pesquisar uk-input uk-border-rounded" type="search" placeholder="Pesquisar Tarefas..." aria-label="search" id="descricaoPesquisarTarefa" oninput="pesquisarTarefa()">
     </form>
     <div class="container-filtros">
         <p class="uk-margin-small-top uk-margin-remove-bottom uk-text-bold">Filtros</p>
         <div class="container-button-filtros uk-flex uk-flex-center uk-flex-middle uk-flex-between uk-background-primary uk-border-rounded" >
-            <button class="button-container-selected uk-border-rounded uk-margin-small-left">Todas</button>
-            <button class="button-container-deselected uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;">
+            <button class="button-container-selected uk-border-rounded uk-margin-small-left" onclick="filtrarTarefasTodas(); selecionarBotaoAtivo(this)">Todas</button>
+            <button class="button-container-deselected uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;" onclick="filtrarTarefasPendentes(); selecionarBotaoAtivo(this);">
                 <span uk-icon="icon: clock"></span> 
                 Pendentes
             </button>
-            <button class="button-container-deselected uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;"">
+            <button class="button-container-deselected uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;" onclick="filtrarTarefasConcluidas(); selecionarBotaoAtivo(this);" ">
                 <span uk-icon="icon: check"></span> 
                 Concluídas
             </button>
-            <button class="button-container-deselected uk-margin-small-right uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;"">
+            <button class="button-container-deselected uk-margin-small-right uk-flex uk-flex-center uk-flex-middle" style="gap: 4px;" onclick="filtrarTarefasUrgentes(); selecionarBotaoAtivo(this);">
                 <span uk-icon="icon: warning"></span> 
                 Urgentes
             </button>
         </div>
     </div>
 
-     <div class="container-resultados">
+     <div class="container-resultados uk-margin-medium-bottom">
         @if (Model != null && Model.Any())
         {
             @foreach (var tarefa in Model)
             {
-                <div id= "tarefa-@tarefa.Id" class="container-resultado uk-margin-small-top uk-border-rounded">
+                var estaVencida = tarefa.DataVencimento.Date < DateTime.Now.Date && !tarefa.Concluida;
+                var estaUrgente = tarefa.Urgente && !tarefa.Concluida && tarefa.DataVencimento.Date >= DateTime.Now.Date;
+                var estaconcluida = tarefa.Concluida && !estaVencida;
+
+                <div id= "tarefa-@tarefa.Id" class="container-resultado @(estaVencida ? "vencida" : "") @(estaUrgente ? "urgente" : "") @(estaconcluida ? "concluida" : "") uk-margin-small-top uk-border-rounded">
                     <div class="uk-flex uk-flex-center uk-flex-middle uk-flex-between uk-margin-small-top">
                         <div class="uk-flex uk-flex-middle uk-margin-small-left">
-                            <input class="uk-checkbox uk-border-rounded uk-margin-small-right" type="checkbox">
+                            <input id="ckeckbok-concluida" class="uk-checkbox uk-border-rounded uk-margin-small-right" type="checkbox" onchange="concluirTarefa('@Url.Action("ConcluirTarefa", "Home", new { tarefaId = @tarefa.Id })', this.checked, this)" @(tarefa.Concluida ? "checked" : "")>
                             <div>
-                                <p class="uk-margin-remove-bottom uk-text-bold">@tarefa.Descricao</p>
+                                <p id="tarefa-descricao" class=" @(tarefa.Concluida ? "descricao-concluida" : "") uk-margin-remove-bottom uk-text-bold">@tarefa.Descricao</p>
                                 <p class="uk-margin-remove-top uk-margin-remove-bottom">
                                     <span uk-icon="icon: calendar"></span>
                                     @tarefa.DataVencimento.ToString("dd 'de' MMMM 'de' yyyy")
@@ -80,24 +84,24 @@
                             </div>
                         </div>
                         <div class="uk-margin-small-right uk-flex uk-flex-middle uk-flex-center uk-flex-between" style="gap: 8px;">
-                            @if (@tarefa.Urgente) 
+                            @if (@tarefa.Urgente && @tarefa.DataVencimento.Date >= DateTime.Now.Date) 
                             {     
                                 <div class="uk-flex uk-flex-middle uk-flex-center uk-border-rounded badge-urgente" style="gap: 4px;">
                                     <span uk-icon="icon: warning; ratio: 1"></span>
                                     <p>Urgente</p>
                                 </div>
                             }
-                            @if (@tarefa.DataVencimento < DateTime.Now)
+                            @if (@tarefa.DataVencimento.Date < DateTime.Now.Date)
                             {
                                 <div class="uk-text-center uk-border-rounded badge-atrasada">
                                     <p class="uk-text-bold uk-margin-xsmall-top">Vencida</p>
                                 </div>
 
                             }
-                            <button>
+                            <button class="button-editar" onclick="editarTarefa('@Url.Action("BuscarTarefaPorId", "Home")', @tarefa.Id)" >
                                 <span uk-icon="icon: pencil"></span>
                             </button>
-                            <button onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
+                            <button class="button-excluir" onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
                                 <span uk-icon="icon: trash"></span>
                             </button>
                         </div>
@@ -118,7 +122,6 @@
     });
     
     function cadastrarTarefa() {
-
         var descricao = $('#descricaoTarefa').val();
         var dataVencimento = $('#dataVencimento').val();
         var dataVencimentoObj = new Date(dataVencimento);
@@ -194,8 +197,30 @@
         });
     }
 
+    function editarTarefa(url, tarefaId) {
+        $('#titulo-modal').text('Editar Tarefa');
+
+        $.post(url, { id: tarefaId }, function (tarefa) {
+            $('#descricaoTarefa').val(tarefa.descricao);
+
+            const dataFormatada = new Date(tarefa.dataVencimento).toISOString().split('T')[0];
+            $('#dataVencimento').val(dataFormatada);
+
+            $('#tarefaUrgente').prop('checked', tarefa.urgente);
+
+            UIkit.modal('#modal-tarefa').show();
+        }, "json")
+        .fail(function () {
+            UIkit.notification({
+                message: 'Erro ao editar tarefa!',
+                status: 'danger',
+                pos: 'top-center',
+                timeout: 1500
+            });
+        });
+    }
+
     function removerTarefa(url, tarefaId) {
-        console.log(tarefaId);
          $.post(url)
             .done(function () {
                 $(`#tarefa-${tarefaId}`).remove();
@@ -215,5 +240,101 @@
                 });
             });
     }
+
+    function concluirTarefa(url, tarefaConcluida, checkboxElement) {
+    $.post(url)
+        .done(function () {
+            const tarefaContainer = checkboxElement.closest('.container-resultado');
+            const descricao = tarefaContainer.querySelector('#tarefa-descricao');
+
+            if (tarefaConcluida) {
+                tarefaContainer.classList.add('concluida');
+                descricao.classList.add('descricao-concluida');
+            } else {
+                tarefaContainer.classList.remove('concluida');
+                descricao.classList.remove('descricao-concluida');
+                tarefaContainer.classList.add('urgente');
+            }
+
+            UIkit.notification({
+                message: tarefaConcluida
+                    ? 'Tarefa concluída com sucesso!'
+                    : 'Tarefa desmarcada como concluída!',
+                status: 'success',
+                pos: 'top-center',
+                timeout: 1500
+            });
+        })
+        .fail(function () {
+            UIkit.notification({
+                message: 'Erro ao concluir tarefa!',
+                status: 'danger',
+                pos: 'top-center',
+                timeout: 1500
+            });
+        });
+    }
+
+    function pesquisarTarefa() {
+        var tarefaPesquisada = $('#descricaoPesquisarTarefa').val().toLowerCase();
+        $('.container-resultado').each(function() {
+            var tarefaDescricao = $(this).find('#tarefa-descricao').text().toLowerCase();
+            if (tarefaDescricao.includes(tarefaPesquisada)) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
+    function filtrarTarefasUrgentes() {
+        $('.container-resultado').each(function() {
+            var tarefaUrgente = $(this).find('.badge-urgente').length > 0;
+            if (tarefaUrgente) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
+    function filtrarTarefasConcluidas() {
+        $('.container-resultado').each(function() {
+            var tarefaConcluida = $(this).find('#ckeckbok-concluida').is(':checked');
+            if (tarefaConcluida) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
+    function filtrarTarefasPendentes() {
+        $('.container-resultado').each(function() {
+            var tarefaConcluida = $(this).find('#ckeckbok-concluida').is(':checked');
+            if (!tarefaConcluida) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+
+    function filtrarTarefasTodas() {
+        $('.container-resultado').each(function() {
+            $(this).show();
+        });
+    }
+
+    function selecionarBotaoAtivo(botaoClicado) {
+        document.querySelectorAll('.button-container-selected, .button-container-deselected')
+            .forEach(btn => {
+                btn.classList.remove('button-container-selected');
+                btn.classList.add('button-container-deselected');
+            });
+
+        botaoClicado.classList.remove('button-container-deselected');
+        botaoClicado.classList.add('button-container-selected');
+}
 
 </script>

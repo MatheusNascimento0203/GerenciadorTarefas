@@ -4,6 +4,7 @@ using GerenciadorTarefas.Models;
 using GerenciadorTarefas.Repository;
 using GerenciadorTarefas.ViewModels;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Identity;
 
 namespace GerenciadorTarefas.Controllers;
 
@@ -34,6 +35,30 @@ public class HomeController : Controller
     public async Task<ActionResult> RemoverTarefa(int tarefaId)
     {
         await _tarefaRepository.ExcluirTarefa(tarefaId);
+        return Ok();
+    }
+
+    [HttpPost("{tarefaId}/concluir-tarefa")]
+    public async Task<ActionResult> ConcluirTarefa(int tarefaId)
+    {
+        await _tarefaRepository.AlteraConclusaoTarefa(tarefaId);
+        return Ok();
+    }
+
+    [HttpPost("buscar-tarefa")]
+    public async Task<ActionResult<Tarefa>> BuscarTarefaPorId([FromBody] int id)
+    {
+        var tarefaExistente = await _tarefaRepository.BuscarPorId(id);
+        if (tarefaExistente == null)
+            return NotFound();
+
+        return Ok(tarefaExistente);
+    }
+
+    [HttpPost("{tarefaId}/editar-tarefa")]
+    public async Task<ActionResult> AtualizarTarefa(int tarefaId, [FromBody]Tarefa tarefa)
+    {
+        await _tarefaRepository.EditarTarefa(tarefaId, tarefa);
         return Ok();
     }
 

@@ -37,5 +37,45 @@ namespace GerenciadorTarefas.Repository
             return tarefa;
         }
 
+        public async Task<Tarefa> AlteraConclusaoTarefa(int idTarefa)
+        {
+            var tarefa = await _context.Tarefas.FindAsync(idTarefa);
+
+            if (tarefa == null)
+            {
+                throw new Exception("Tarefa não encontrada.");
+            }
+
+
+            tarefa.Concluida = !tarefa.Concluida; 
+            
+            _context.Tarefas.Update(tarefa);
+            await _context.SaveChangesAsync();
+            return tarefa;
+        }     
+
+        public async Task<Tarefa> BuscarPorId(int id)
+        {
+            return await _context.Tarefas.FindAsync(id);
+        }
+
+        public async Task<Tarefa> EditarTarefa(int idTarefa, Tarefa tarefa) 
+        {
+            var tarefaExistente = await _context.Tarefas.FindAsync(idTarefa);
+
+            if (tarefaExistente == null)
+            {
+                throw new Exception("Tarefa não encontrada.");
+            }
+
+            tarefaExistente.Descricao = tarefa.Descricao;
+            tarefaExistente.DataVencimento = tarefa.DataVencimento;
+            tarefaExistente.Urgente = tarefa.Urgente;
+
+            _context.Tarefas.Update(tarefaExistente);
+            await _context.SaveChangesAsync();
+            return tarefaExistente;
+        } 
+
     }
 }
