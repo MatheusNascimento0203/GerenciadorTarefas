@@ -45,18 +45,8 @@ public class HomeController : Controller
         return Ok();
     }
 
-    [HttpPost("buscar-tarefa")]
-    public async Task<ActionResult<Tarefa>> BuscarTarefaPorId([FromBody] int id)
-    {
-        var tarefaExistente = await _tarefaRepository.BuscarPorId(id);
-        if (tarefaExistente == null)
-            return NotFound();
-
-        return Ok(tarefaExistente);
-    }
-
     [HttpPost("{tarefaId}/editar-tarefa")]
-    public async Task<ActionResult> AtualizarTarefa(int tarefaId, [FromBody]Tarefa tarefa)
+    public async Task<ActionResult> AtualizarTarefa(int tarefaId, [FromBody] Tarefa tarefa)
     {
         await _tarefaRepository.EditarTarefa(tarefaId, tarefa);
         return Ok();

@@ -98,7 +98,9 @@
                                 </div>
 
                             }
-                            <button class="button-editar" onclick="editarTarefa('@Url.Action("BuscarTarefaPorId", "Home")', @tarefa.Id)" >
+                            <button class="button-editar" onclick="editarTarefa('@Url.Action("AtualizarTarefa", "Home", new { tarefaId = @tarefa.Id })', {id: @tarefa.Id, descricao: '@tarefa.Descricao',
+                            dataVencimento: '@tarefa.DataVencimento.ToString("yyyy-MM-dd")',
+                            urgente: @tarefa.Urgente.ToString().ToLower()})" >
                                 <span uk-icon="icon: pencil"></span>
                             </button>
                             <button class="button-excluir" onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
@@ -116,9 +118,16 @@
 
 <script>
 
-    $('form').on('submit', function (e) {
+    let modalEditar = false
+
+    $('form').on('submit', function (e) {        
         e.preventDefault();
-        cadastrarTarefa();
+
+        if (modalEditar) {
+            editarTarefa()
+        } else {
+            cadastrarTarefa();
+        }
     });
     
     function cadastrarTarefa() {
@@ -197,27 +206,53 @@
         });
     }
 
-    function editarTarefa(url, tarefaId) {
+    function editarTarefa(url, tarefa) {
+        modalEditar = true;
+        UIkit.modal('#modal-tarefa').show();
         $('#titulo-modal').text('Editar Tarefa');
+        $('#descricaoTarefa').val(tarefa.descricao);
+        const dataFormatada = new Date(tarefa.dataVencimento).toISOString().split('T')[0];
+        $('#dataVencimento').val(dataFormatada);
+        $('#tarefaUrgente').is(':checked');
 
-        $.post(url, { id: tarefaId }, function (tarefa) {
-            $('#descricaoTarefa').val(tarefa.descricao);
+        const objTarefa = {
+            Id: tarefa.id,
+            Descricao: tarefa.descricao,
+            DataVencimento: dataFormatada,
+            Urgente: tarefa.urgente,
+            Concluida: tarefa.concluida
+        };
 
-            const dataFormatada = new Date(tarefa.dataVencimento).toISOString().split('T')[0];
-            $('#dataVencimento').val(dataFormatada);
-
-            $('#tarefaUrgente').prop('checked', tarefa.urgente);
-
-            UIkit.modal('#modal-tarefa').show();
-        }, "json")
-        .fail(function () {
-            UIkit.notification({
-                message: 'Erro ao editar tarefa!',
-                status: 'danger',
-                pos: 'top-center',
-                timeout: 1500
-            });
+        $.ajax({
+            url: url,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(objTarefa),
+            success: function() {
+                UIkit.notification({
+                    message: 'Tarefa editada com sucesso!',
+                    status: 'success',
+                    pos: 'top-center',
+                    timeout: 1500
+                });
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            },
+            error: function () {
+                UIkit.notification({
+                    message: 'Erro ao editar tarefa!',
+                    status: 'danger',
+                    pos: 'top-center',
+                    timeout: 1500
+                });
+            }
         });
+        
+        // Reseta o modo
+        modoEdicao = false;
+    
+
     }
 
     function removerTarefa(url, tarefaId) {
