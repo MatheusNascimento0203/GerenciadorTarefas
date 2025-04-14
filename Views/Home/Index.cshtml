@@ -101,9 +101,20 @@
                             <button class="button-editar" onclick="abrirModalEdicao('@Url.Action("AtualizarTarefa", "Home", new { tarefaId = @tarefa.Id })', { id: @tarefa.Id, descricao: '@tarefa.Descricao', dataVencimento: '@tarefa.DataVencimento.ToString("yyyy-MM-dd")', urgente: @tarefa.Urgente.ToString().ToLower(), concluida: @tarefa.Concluida.ToString().ToLower() })">
                                 <span uk-icon="icon: pencil"></span>
                             </button>
-                            <button class="button-excluir" onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
+                            <button id="js-modal-confirm" class="button-excluir" onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
                                 <span uk-icon="icon: trash"></span>
                             </button>
+
+                            <div id="modal-remover" uk-modal>
+                                 <div class="uk-modal-dialog uk-modal-body uk-text-center">
+                                    <h2 class="uk-text-left uk-modal-title">Excluir Tarefa</h2>
+                                    <p class="uk-text-left">Tem certeza que deseja excluir esta tarefa? Esta ação não pode ser desfeita.</p>
+                                    <div class="uk-text-right">
+                                        <button class="uk-button uk-button-default uk-modal-close uk-border-rounded " type="button">Cancelar</button>
+                                        <button id="btn-confirmar-remover" class="uk-button uk-button-danger uk-border-rounded" type="button">Excluir</button>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -156,7 +167,8 @@
         } 
 
         //SETANDO DATA VENCIMENTO E DATA ATUAL
-        const dataVencimentoObj = new Date(dataVencimento);
+        const partesData = dataVencimento.split('-');
+        const dataVencimentoObj = new Date(partesData[0], partesData[1] - 1, partesData[2]);
         const dataAtual = new Date();
         dataAtual.setHours(0, 0, 0, 0);
         dataVencimentoObj.setHours(0, 0, 0, 0); // zera a hora para comparar só a data
@@ -229,7 +241,8 @@
         } 
 
         //SETANDO DATA VENCIMENTO E DATA ATUAL
-        const dataVencimentoObj = new Date(dataVencimento);
+        const partesData = dataVencimento.split('-');
+        const dataVencimentoObj = new Date(partesData[0], partesData[1] - 1, partesData[2]);
         const dataAtual = new Date();
         dataAtual.setHours(0, 0, 0, 0);
         dataVencimentoObj.setHours(0, 0, 0, 0); // zera a hora para comparar só a data
@@ -267,14 +280,23 @@
     }
 
     function removerTarefa(url, tarefaId) {
-         $.post(url)
-            .done(function () {
-                $(`#tarefa-${tarefaId}`).remove();
-                alertMessage('Tarefa removida com sucesso!', 'danger');
-            })
-            .fail(function () {
-               alertMessage('Erro ao remover tarefa!', 'danger');
-            });
+        const modal = UIkit.modal('#modal-remover');
+        // Remove listeners antigos para evitar múltiplos cliques
+        $('#btn-confirmar-remover').off('click');
+
+        $('#btn-confirmar-remover').on('click', function () {
+            $.post(url)
+                .done(function () {
+                    $(`#tarefa-${tarefaId}`).remove();
+                    alertMessage('Tarefa removida com sucesso!', 'danger');
+                })
+                .fail(function () {
+                    alertMessage('Erro ao remover tarefa!', 'danger');
+                })
+                .always(() => modal.hide());
+        });
+
+        modal.show();
     }
 
     function concluirTarefa(url, tarefaConcluida, checkboxElement) {
