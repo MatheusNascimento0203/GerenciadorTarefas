@@ -132,33 +132,41 @@
     });
     
     function cadastrarTarefa() {
-        var descricao = $('#descricaoTarefa').val();
-        var dataVencimento = $('#dataVencimento').val();
-        var dataVencimentoObj = new Date(dataVencimento);
-        var dataAtual = new Date();
-        dataAtual.setHours(0,0,0,0);
-        var dataAtualFormatada = dataAtual.toISOString().split('T')[0]; 
-        var dataVencimentoFormatada = dataVencimentoObj.toISOString().split('T')[0];
-        var urgente = $('#tarefaUrgente').is(':checked');
+        const descricao = $('#descricaoTarefa').val();
+        const dataVencimento = $('#dataVencimento').val();
+        const urgente = $('#tarefaUrgente').is(':checked');
+
+
+        //VALIDANDO CAMPO DESCRIÇÃO E DATA VENCIMENTO
+        if(descricao.trim() === '' && dataVencimento.trim() === '') {
+            alertMessage('Descrição e data de vencimento são obrigatórias.', 'danger');
+            return;
+        }
 
         //VALIDANDO CAMPO DESCRIÇÃO
         if (descricao.trim() === '') {
-        alertMessage('Descrição da tarefa é obrigatória.', 'danger');
-            return;
+            alertMessage('Descrição da tarefa é obrigatória.', 'danger');
+                return;
         } 
 
         //VALIDANDO CAMPO DATA VENCIMENTO
         if (dataVencimento.trim() === '') {
-        alertMessage('Data de vencimento é obrigatória.', 'danger');
-            return;
+            alertMessage('Data de vencimento é obrigatória.', 'danger');
+                return;
         } 
 
-        if (dataVencimentoFormatada < dataAtualFormatada) {
+        //SETANDO DATA VENCIMENTO E DATA ATUAL
+        const dataVencimentoObj = new Date(dataVencimento);
+        const dataAtual = new Date();
+        dataAtual.setHours(0, 0, 0, 0);
+        dataVencimentoObj.setHours(0, 0, 0, 0); // zera a hora para comparar só a data
+
+        if (dataVencimentoObj.getTime() < dataAtual.getTime()) {
             alertMessage('Data de vencimento não pode ser menor que a data atual.', 'danger');
             return;
         }
 
-        var tarefa = { 
+        const tarefa = { 
             Descricao: descricao,
             DataVencimento: dataVencimento,
             Urgente: urgente,
@@ -198,36 +206,65 @@
     
 
     function editarTarefa() {
-    const descricao = $('#descricaoTarefa').val();
-    const dataVencimento = $('#dataVencimento').val();
-    const urgente = $('#tarefaUrgente').is(':checked');
+        const descricao = $('#descricaoTarefa').val();
+        const dataVencimento = $('#dataVencimento').val();
+        const urgente = $('#tarefaUrgente').is(':checked');
 
-    const objTarefa = {
-        Id: tarefaIdAtual,
-        Descricao: descricao,
-        DataVencimento: dataVencimento,
-        Urgente: urgente
-    };
+        //VALIDANDO CAMPO DESCRIÇÃO E DATA VENCIMENTO
+        if(descricao.trim() === '' && dataVencimento.trim() === '') {
+            alertMessage('Descrição e data de vencimento são obrigatórias.', 'danger');
+            return;
+        }
 
-    $.ajax({
-        url: tarefaUrlAtual,
-        type: 'POST',
-        contentType: 'application/json; charset=utf-8',
-        data: JSON.stringify(objTarefa),
-        success: function () {
-           alertMessage('Tarefa editada com sucesso!', 'success');
-            setTimeout(() => {
-                location.reload();
-            }, 1000);
-        },
-        error: function (xhr) {
-                const errorMsg = xhr.responseJSON?.message || 'Erro ao editar tarefa!';
-                alertMessage(errorMsg, 'danger');
-            }
-    });
+        //VALIDANDO CAMPO DESCRIÇÃO
+        if (descricao.trim() === '') {
+            alertMessage('Descrição da tarefa é obrigatória.', 'danger');
+                return;
+        } 
 
-    modalEditar = false;
-}
+        //VALIDANDO CAMPO DATA VENCIMENTO
+        if (dataVencimento.trim() === '') {
+            alertMessage('Data de vencimento é obrigatória.', 'danger');
+                return;
+        } 
+
+        //SETANDO DATA VENCIMENTO E DATA ATUAL
+        const dataVencimentoObj = new Date(dataVencimento);
+        const dataAtual = new Date();
+        dataAtual.setHours(0, 0, 0, 0);
+        dataVencimentoObj.setHours(0, 0, 0, 0); // zera a hora para comparar só a data
+
+        if (dataVencimentoObj.getTime() < dataAtual.getTime()) {
+            alertMessage('Data de vencimento não pode ser menor que a data atual.', 'danger');
+            return;
+        }
+
+        const objTarefa = {
+            Id: tarefaIdAtual,
+            Descricao: descricao,
+            DataVencimento: dataVencimento,
+            Urgente: urgente
+        };
+
+        $.ajax({
+            url: tarefaUrlAtual,
+            type: 'POST',
+            contentType: 'application/json; charset=utf-8',
+            data: JSON.stringify(objTarefa),
+            success: function () {
+            alertMessage('Tarefa editada com sucesso!', 'success');
+                setTimeout(() => {
+                    location.reload();
+                }, 1000);
+            },
+            error: function (xhr) {
+                    const errorMsg = xhr.responseJSON?.message || 'Erro ao editar tarefa!';
+                    alertMessage(errorMsg, 'danger');
+                }
+        });
+
+        modalEditar = false;
+    }
 
     function removerTarefa(url, tarefaId) {
          $.post(url)
