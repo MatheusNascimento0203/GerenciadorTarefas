@@ -9,7 +9,6 @@ C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenci
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\appsettings.Development.json
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\appsettings.json
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\GerenciadorTarefas.staticwebassets.runtime.json
-C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\GerenciadorTarefas.staticwebassets.endpoints.json
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\GerenciadorTarefas.exe
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\GerenciadorTarefas.deps.json
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\GerenciadorTarefas.runtimeconfig.json
@@ -156,9 +155,7 @@ C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenci
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\scopedcss\projectbundle\GerenciadorTarefas.bundle.scp.css
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets.build.json
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets.development.json
-C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets\msbuild.GerenciadorTarefas.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets\msbuild.GerenciadorTarefas.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets\msbuild.build.GerenciadorTarefas.props
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.GerenciadorTarefas.props
 C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.GerenciadorTarefas.props
@@ -340,3 +337,4 @@ C:\Users\Matheus Nascimento\Desktop\GerenciadorTarefas\obj\Debug\net8.0\Gerencia
 C:\Users\Matheus Nascimento\Desktop\GerenciadorTarefas\obj\Debug\net8.0\GerenciadorTarefas.genruntimeconfig.cache
 C:\Users\Matheus Nascimento\Desktop\GerenciadorTarefas\obj\Debug\net8.0\ref\GerenciadorTarefas.dll
 C:\Users\Matheus Nascimento\Desktop\GerenciadorTarefas\bin\Debug\net8.0\global.json
+C:\Users\Matheus - SMN\OneDrive - SMN Informatica LTDA\Área de Trabalho\Gerenciador de Tarefas\GerenciadorTarefas\bin\Debug\net8.0\global.json

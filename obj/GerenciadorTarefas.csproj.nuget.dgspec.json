@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Matheus Nascimento\\Desktop\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {}
+    "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Matheus Nascimento\\Desktop\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {
+    "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Matheus Nascimento\\Desktop\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
+        "projectUniqueName": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
         "projectName": "GerenciadorTarefas",
-        "projectPath": "C:\\Users\\Matheus Nascimento\\Desktop\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
-        "packagesPath": "C:\\Users\\Matheus Nascimento\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Matheus Nascimento\\Desktop\\GerenciadorTarefas\\obj\\",
+        "projectPath": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\GerenciadorTarefas.csproj",
+        "packagesPath": "C:\\Users\\Matheus - SMN\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Matheus - SMN\\OneDrive - SMN Informatica LTDA\\Área de Trabalho\\Gerenciador de Tarefas\\GerenciadorTarefas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\Matheus Nascimento\\AppData\\Roaming\\NuGet\\NuGet.Config"
+          "C:\\Users\\Matheus - SMN\\AppData\\Roaming\\NuGet\\NuGet.Config"
         ],
         "originalTargetFrameworks": [
           "net8.0"
@@ -37,7 +37,8 @@
           "enableAudit": "true",
           "auditLevel": "low",
           "auditMode": "direct"
-        }
+        },
+        "SdkAnalysisLevel": "9.0.200"
       },
       "frameworks": {
         "net8.0": {
@@ -79,7 +80,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.408/PortableRuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\9.0.203/PortableRuntimeIdentifierGraph.json"
         }
       }
     }

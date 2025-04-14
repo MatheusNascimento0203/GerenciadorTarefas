@@ -98,9 +98,7 @@
                                 </div>
 
                             }
-                            <button class="button-editar" onclick="editarTarefa('@Url.Action("AtualizarTarefa", "Home", new { tarefaId = @tarefa.Id })', {id: @tarefa.Id, descricao: '@tarefa.Descricao',
-                            dataVencimento: '@tarefa.DataVencimento.ToString("yyyy-MM-dd")',
-                            urgente: @tarefa.Urgente.ToString().ToLower()})" >
+                            <button class="button-editar" onclick="abrirModalEdicao('@Url.Action("AtualizarTarefa", "Home", new { tarefaId = @tarefa.Id })', { id: @tarefa.Id, descricao: '@tarefa.Descricao', dataVencimento: '@tarefa.DataVencimento.ToString("yyyy-MM-dd")', urgente: @tarefa.Urgente.ToString().ToLower(), concluida: @tarefa.Concluida.ToString().ToLower() })">
                                 <span uk-icon="icon: pencil"></span>
                             </button>
                             <button class="button-excluir" onclick="removerTarefa('@Url.Action("RemoverTarefa", "Home", new { tarefaId = @tarefa.Id})', @tarefa.Id)" >
@@ -112,13 +110,16 @@
             }
         }
     </div>
+    <div id="alert-container" style="position: fixed; bottom: 20px; right: 20px; z-index: 9999;"></div>
 </div>
 
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
 
 <script>
 
-    let modalEditar = false
+    let modalEditar = false;
+    let tarefaUrlAtual = '';
+    let tarefaIdAtual = null;
 
     $('form').on('submit', function (e) {        
         e.preventDefault();
@@ -142,33 +143,18 @@
 
         //VALIDANDO CAMPO DESCRIÇÃO
         if (descricao.trim() === '') {
-        UIkit.notification({
-            message: 'Nome da Tarefa é obrigatório.',
-            status: 'danger',
-            pos: 'bottom-center',            
-            timeout: 1500,
-        });
+        alertMessage('Descrição da tarefa é obrigatória.', 'danger');
             return;
         } 
 
         //VALIDANDO CAMPO DATA VENCIMENTO
         if (dataVencimento.trim() === '') {
-        UIkit.notification({
-            message: 'Data de vencimento é obrigatória.',
-            status: 'danger',
-            pos: 'bottom-center',            
-            timeout: 1500,
-        });
+        alertMessage('Data de vencimento é obrigatória.', 'danger');
             return;
         } 
 
         if (dataVencimentoFormatada < dataAtualFormatada) {
-             UIkit.notification({
-            message: 'Data de vencimento deve ser maior que a data atual.',
-            status: 'danger',
-            pos: 'bottom-center',            
-            timeout: 1500,
-        });
+            alertMessage('Data de vencimento não pode ser menor que a data atual.', 'danger');
             return;
         }
 
@@ -185,94 +171,72 @@
             contentType: 'application/json; charset=utf-8',
             data: JSON.stringify(tarefa),
             success: function() {
-                UIkit.notification({
-                    message: 'Tarefa adicionada com sucesso!',
-                    status: 'success',
-                    pos: 'top-center',
-                    timeout: 1500
-                });
+                alertMessage('Tarefa cadastrada com sucesso!', 'success');
                 setTimeout(() => {
                     location.reload();
                 }, 1000);
             },
-            error: function () {
-                UIkit.notification({
-                    message: 'Erro ao adicionar tarefa!',
-                    status: 'danger',
-                    pos: 'top-center',
-                    timeout: 1500
-                });
+            error: function (xhr) {
+                const errorMsg = xhr.responseJSON?.message || 'Erro ao adicionar tarefa!';
+               alertMessage(errorMsg, 'danger');
             }
         });
     }
 
-    function editarTarefa(url, tarefa) {
-        modalEditar = true;
-        UIkit.modal('#modal-tarefa').show();
-        $('#titulo-modal').text('Editar Tarefa');
-        $('#descricaoTarefa').val(tarefa.descricao);
-        const dataFormatada = new Date(tarefa.dataVencimento).toISOString().split('T')[0];
-        $('#dataVencimento').val(dataFormatada);
-        $('#tarefaUrgente').is(':checked');
+    function abrirModalEdicao(url, tarefa) {
+    modalEditar = true;
+    tarefaUrlAtual = url;
+    tarefaIdAtual = tarefa.id;
 
-        const objTarefa = {
-            Id: tarefa.id,
-            Descricao: tarefa.descricao,
-            DataVencimento: dataFormatada,
-            Urgente: tarefa.urgente,
-            Concluida: tarefa.concluida
-        };
+    $('#titulo-modal').text('Editar Tarefa');
+    $('#descricaoTarefa').val(tarefa.descricao);
+    $('#dataVencimento').val(tarefa.dataVencimento);
+    $('#tarefaUrgente').prop('checked', tarefa.urgente);
 
-        $.ajax({
-            url: url,
-            type: 'POST',
-            contentType: 'application/json; charset=utf-8',
-            data: JSON.stringify(objTarefa),
-            success: function() {
-                UIkit.notification({
-                    message: 'Tarefa editada com sucesso!',
-                    status: 'success',
-                    pos: 'top-center',
-                    timeout: 1500
-                });
-                setTimeout(() => {
-                    location.reload();
-                }, 1000);
-            },
-            error: function () {
-                UIkit.notification({
-                    message: 'Erro ao editar tarefa!',
-                    status: 'danger',
-                    pos: 'top-center',
-                    timeout: 1500
-                });
-            }
-        });
-        
-        // Reseta o modo
-        modoEdicao = false;
+    UIkit.modal('#modal-tarefa').show();
+}
     
 
-    }
+    function editarTarefa() {
+    const descricao = $('#descricaoTarefa').val();
+    const dataVencimento = $('#dataVencimento').val();
+    const urgente = $('#tarefaUrgente').is(':checked');
+
+    const objTarefa = {
+        Id: tarefaIdAtual,
+        Descricao: descricao,
+        DataVencimento: dataVencimento,
+        Urgente: urgente
+    };
+
+    $.ajax({
+        url: tarefaUrlAtual,
+        type: 'POST',
+        contentType: 'application/json; charset=utf-8',
+        data: JSON.stringify(objTarefa),
+        success: function () {
+           alertMessage('Tarefa editada com sucesso!', 'success');
+            setTimeout(() => {
+                location.reload();
+            }, 1000);
+        },
+        error: function (xhr) {
+                const errorMsg = xhr.responseJSON?.message || 'Erro ao editar tarefa!';
+                alertMessage(errorMsg, 'danger');
+            }
+    });
+
+    modalEditar = false;
+}
 
     function removerTarefa(url, tarefaId) {
          $.post(url)
             .done(function () {
                 $(`#tarefa-${tarefaId}`).remove();
-                UIkit.notification({
-                    message: 'Tarefa removida com sucesso!',
-                    status: 'success',
-                    pos: 'top-center',
-                    timeout: 1500
-                });
+                alertMessage('Tarefa removida com sucesso!', 'danger');
             })
             .fail(function () {
-                UIkit.notification({
-                    message: 'Erro ao remover tarefa!',
-                    status: 'danger',
-                    pos: 'top-center',
-                    timeout: 1500
-                });
+               alertMessage('Erro ao remover tarefa!', 'danger');
             });
     }
 
@@ -285,28 +249,16 @@
             if (tarefaConcluida) {
                 tarefaContainer.classList.add('concluida');
                 descricao.classList.add('descricao-concluida');
+                alertMessage('Tarefa concluída com sucesso!', 'success');
             } else {
                 tarefaContainer.classList.remove('concluida');
                 descricao.classList.remove('descricao-concluida');
                 tarefaContainer.classList.add('urgente');
-            }
-
-            UIkit.notification({
-                message: tarefaConcluida
-                    ? 'Tarefa concluída com sucesso!'
-                    : 'Tarefa desmarcada como concluída!',
-                status: 'success',
-                pos: 'top-center',
-                timeout: 1500
-            });
+                alertMessage('Tarefa desmarcada como concluída!', 'primary');
+            }            
         })
         .fail(function () {
-            UIkit.notification({
-                message: 'Erro ao concluir tarefa!',
-                status: 'danger',
-                pos: 'top-center',
-                timeout: 1500
-            });
+            alertMessage('Erro ao concluir tarefa!', 'danger');
         });
     }
 
@@ -371,5 +323,29 @@
         botaoClicado.classList.remove('button-container-deselected');
         botaoClicado.classList.add('button-container-selected');
 }
+
+//FUNÇÃO PARA EXIBIR MENSAGENS DE ALERTA
+    function alertMessage(message, status) {
+    const alertContainer = document.getElementById('alert-container');
+
+    const alert = document.createElement('div');
+    alert.className = `uk-alert-${status}`;
+    alert.setAttribute('uk-alert', '');
+
+    alert.innerHTML = `
+      <a class="uk-alert-close" uk-close></a>
+      <p style= "margin-right: 10px">${message}</p>
+    `;
+
+    alertContainer.appendChild(alert);
+
+    UIkit.alert(alert);
+
+    setTimeout(() => {
+      if (alert && alert.parentNode) {
+        alert.parentNode.removeChild(alert);
+      }
+    }, 5000);
+  }
 
 </script>

@@ -20,6 +20,13 @@ namespace GerenciadorTarefas.Repository
 
         public async Task CriarTarefa(Tarefa tarefa)
         {
+            var tarefaExistente = await _context.Tarefas.AnyAsync(t => t.Descricao.ToLower() == tarefa.Descricao.ToLower() && !t.Concluida);
+
+            if (tarefaExistente)
+            {
+                throw new InvalidOperationException("Já existe uma tarefa com esse nome que ainda não foi concluída.");
+            }
+
             _context.Tarefas.Add(tarefa);
             await _context.SaveChangesAsync();
         }
@@ -68,6 +75,13 @@ namespace GerenciadorTarefas.Repository
                 throw new Exception("Tarefa não encontrada.");
             }
 
+            var tarefaDuplicada = await _context.Tarefas.AnyAsync(t => t.Id != idTarefa && t.Descricao.ToLower() == tarefa.Descricao.ToLower() && !t.Concluida);
+
+            if (tarefaDuplicada)
+            {
+                throw new InvalidOperationException("Já existe uma tarefa com esse nome que ainda não foi concluída.");
+            }
+   
             tarefaExistente.Descricao = tarefa.Descricao;
             tarefaExistente.DataVencimento = tarefa.DataVencimento;
             tarefaExistente.Urgente = tarefa.Urgente;
